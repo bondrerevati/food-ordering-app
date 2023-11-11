@@ -1,0 +1,34 @@
+.lpImg {
+    height: 450px;
+    padding-left: 20px;
+}
+.landing-page-container {
+    width: 85%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+}
+.select-user {
+    display: block;
+}
+h1 {
+    font-size: 46px;
+    padding-left: 20px;
+    margin-top: 90px;
+    margin-bottom: 50px;
+}
+.user-btn {
+    margin: 10px;
+    background-color: #93e410;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px;
+    width: 150px;
+    height: 45px;
+    cursor: pointer;
+}
+.select-user-btn-box {
+    margin-left: 40px;
+}
