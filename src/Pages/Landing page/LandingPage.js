@@ -11,7 +11,7 @@ export default function LandingPage() {
                 <h1 className='landing-page-heading'>Food Ordering App</h1>
                 <div className="select-user-btn-box">
                 <button className="user-btn" onClick={()=>navigate("/customer/login")}>Customer</button>
-                <button className="user-btn">Restaurant</button>
+                <button className="user-btn" onClick={()=>navigate("/restaurant/login")}>Restaurant</button>
                 </div>
             </div>
             <img className="lpImg" src={lpImg} alt=""/>
