@@ -1,0 +1,83 @@
+.sign-up-span {
+    color: #0000ff;
+    cursor: pointer;
+}
+.sign-up-span:hover {
+    text-decoration: underline;
+}
+.customer-login-signup-div {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+.customer-login-signup-div1 {
+    width: 50%;
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.customer-login-signup-form-div {
+    width: 380px;
+    border-radius: 10px;
+    border: 2px solid #93e410;
+}
+.customer-login-signup-heading {
+    font-weight: normal;
+    padding-left: 50px;
+}
+.customer-login-signup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 40px 40px 40px;
+}
+.input-field {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    height: 30px;
+    font-size: 16px;
+    width: 300px;
+}
+.customer-login-signup-div2 {
+    width: 50%;
+    height: 100vh;
+    overflow: hidden;
+}
+.submit-btn {
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 5px;
+    width: 150px;
+    height: 30px;
+    width: 300px;
+    cursor: pointer;
+    font-family: inherit;
+    margin: 10px 0;
+}
+.customer-login-signup-btn {
+    background-color: #93e410;
+    border: 1px solid #93e410;
+}
+.customer-login-signup-btn:hover {
+    border: 1px solid #93e410;
+    background-color: #fff;
+}
+.input-label {
+    font-size: 16px;
+    font-weight: bold;
+}
+.login-signup-span {
+    color: #0000ff;
+    cursor: pointer;
+}
+.login-signup-span:hover {
+    text-decoration: underline;
+}
+.customer-login-signup-img {
+    width: 100%;
+    height: 100%;
+}

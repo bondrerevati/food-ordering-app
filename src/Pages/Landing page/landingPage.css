@@ -11,7 +11,7 @@
 .select-user {
     display: block;
 }
-h1 {
+.landing-page-heading {
     font-size: 46px;
     padding-left: 20px;
     margin-top: 90px;
@@ -28,6 +28,11 @@ h1 {
     width: 150px;
     height: 45px;
     cursor: pointer;
+    font-family: inherit;
+}
+.user-btn:hover {
+    border: 1px solid #93e410;
+    background-color: #fff;
 }
 .select-user-btn-box {
     margin-left: 40px;
