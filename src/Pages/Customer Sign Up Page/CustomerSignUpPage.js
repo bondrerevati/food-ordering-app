@@ -55,14 +55,15 @@ export default function CustomerSignUpPage() {
     }
   };
   const handleSubmit = async () => {
+    setSignupError("");
     if (name === "") {
-      setEmailError("Name can't be empty");
+      setNameError("Name can't be empty");
     }
     if (email === "") {
       setEmailError("Email can't be empty");
     }
     if (mobileNumber === "") {
-      setEmailError("Mobile number can't be empty");
+      setMobileNumberError("Mobile number can't be empty");
     }
     if (password === "") {
       setPasswordError("Password can't be empty");
@@ -74,9 +75,19 @@ export default function CustomerSignUpPage() {
       passwordError === ""
     ) {
       axios
-        .post("http://localhost:8080/customer/signin", { name, email, mobileNumber, password })
+        .post("http://localhost:8080/customer/signup", {
+          name,
+          email,
+          mobileNumber,
+          password,
+        })
         .then((response) => {
-          console.log(response.data.message);
+          if (
+            response.status === 200 &&
+            response.data.token === "customerExists"
+          )
+            setSignupError(response.data.message);
+          else console.log(response.data.message);
         })
         .catch((error) => {
           if (error.response) setSignupError(error.response.data.message);
@@ -132,8 +143,8 @@ export default function CustomerSignUpPage() {
               id="customer-signup-pass"
               className="input-field"
               onChange={handlePasswordChange}
-              onFocus={()=>setDisplayRule(true)}
-              onBlur={()=>setDisplayRule(false)}
+              onFocus={() => setDisplayRule(true)}
+              onBlur={() => setDisplayRule(false)}
             />
             <p className="error">{passwordError}</p>
             {displayRule && (
@@ -149,6 +160,7 @@ export default function CustomerSignUpPage() {
             >
               Sign Up
             </button>
+            <p className="error">{signupError}</p>
             <p className="login-signup-question">
               Already have an account?{" "}
               <span

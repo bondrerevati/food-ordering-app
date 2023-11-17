@@ -11,7 +11,8 @@ export default function CustomerLoginPage() {
   const [loginError, setLoginError] = useState("");
   const navigate = useNavigate();
   const handleEmailChange = (e) => {
-    const regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+    const regex =
+      /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (e.target.value === "") setEmailError("Email can't be empty");
     else if (!e.target.value.match(regex)) setEmailError("Email is invalid");
     else if (e.target.value.match(regex)) {
@@ -27,6 +28,7 @@ export default function CustomerLoginPage() {
     }
   };
   const handleSubmit = async () => {
+    setLoginError("");
     if (email === "") {
       setEmailError("Email can't be empty");
     }
