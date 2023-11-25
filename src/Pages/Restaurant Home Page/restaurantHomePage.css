@@ -1,0 +1,135 @@
+.food-item-main-div {
+  min-height: 100vh;
+  min-width: 70vw;
+}
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 95%;
+  height: 100%;
+}
+.food-item-list-heading {
+  background-color: transparent;
+  line-height: 40px;
+  color: #818181;
+}
+tr {
+  line-height: 100px;
+  background-color: #fff;
+}
+td:first-child,
+th:first-child {
+  border-radius: 10px 0 0 10px;
+}
+td:last-child,
+th:last-child {
+  border-radius: 0 10px 10px 0;
+}
+th,
+td {
+  width: 150px;
+  text-align: center;
+  padding: 5px;
+}
+.food-item-list-data {
+  border-right: hidden;
+}
+.food-item-list {
+  border-collapse: separate;
+  border-spacing: 0 15px;
+}
+.food-item-image {
+  vertical-align: middle;
+  height: 90px;
+}
+.food-item-button {
+  background-color: #93e410;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.delete-modal {
+  background-color: #fff;
+  width: 28%;
+  height: auto;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.delete-confirm-btn,
+.cancel-btn {
+  background-color: #93e410;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.delete-modal-btns {
+  width: 50%;
+  margin: 25px auto 25px;
+}
+.delete-modal {
+  background-color: #fff;
+  width: 28%;
+  height: auto;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  position: fixed;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.507);
+}
+.delete-modal hr {
+  border: 1px solid #eee;
+  width: 90%;
+}
+.view-modal-container{
+  background-color: #fff;
+  width: 30%;
+  height: auto;
+  padding: 10px 25px 30px;
+  box-sizing: border-box;
+  position: fixed;
+  left: 50%;
+  top: 53%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.507);
+}
+.view-modal-header{
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 0px;
+  box-sizing: border-box;
+}
+.view-modal-header h3{
+  font-size: 18px;
+  margin: 0px;
+}
+.view-modal-img-box{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+.img-in-viewmodal{
+  width: 300px;
+  height: 200px;
+}
+.view-modal-content-box p{
+  margin: 20px 0px;
+  font-size: 14px;
+}
+.view-modal-content-box span{
+  font-weight: bold;
+}
+.hide-data {
+  display: none;
+}

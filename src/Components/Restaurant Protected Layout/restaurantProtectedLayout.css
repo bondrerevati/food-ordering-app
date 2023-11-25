@@ -1,0 +1,15 @@
+.main-container {
+    display: flex;
+    position: relative;
+    margin-top: 70px;
+}
+.sidebar-container {
+    position: fixed;
+    width: 100%;
+}
+.outlet-container{
+    width:80%;
+    height: 95vh;
+    margin-left: 20%;
+    position: relative;
+}
