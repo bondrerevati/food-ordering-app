@@ -1,0 +1,33 @@
+.order-main-div {
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.complete {
+    background-color: #93e410;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px;
+    cursor: pointer;
+    font-family: inherit;
+    margin: 5px;
+}
+.order-table {
+    border: 2px solid #93e410;
+    width: 800px;
+    height: 200px;
+    align-items: center;
+    background-color: #fff;
+    justify-content: center;
+    text-align: center;
+}
+ 
+.order-th {
+    border-bottom: 1px solid black;
+}
+ 
+.order-td {
+    text-align: center;
+}

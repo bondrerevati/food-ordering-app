@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import "./../../Common Styling/loginSignup.css";
 import restaurantlpImg from "./../../Assets/restaurantlp-img.png";
 import { useNavigate } from "react-router-dom";
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
+import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 import axios from "axios";
 export default function RestaurantSignUpPage() {
+  const [hidePassword, setHidePassword] = useState(true);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [address, setAddress] = useState("");
@@ -19,6 +22,9 @@ export default function RestaurantSignUpPage() {
   const [signupError, setSignupError] = useState("");
   const [displayRule, setDisplayRule] = useState(false);
   const navigate = useNavigate();
+  const handleClickShowPassword=()=>{
+    setHidePassword(!hidePassword);
+  }
   const handleNameChange = (e) => {
     if (e.target.value === "") setNameError("Name can't be empty");
     else {
@@ -108,10 +114,10 @@ export default function RestaurantSignUpPage() {
         .then((response) => {
           if (
             response.status === 200 &&
-            response.data.token === "customerExists"
+            response.data.token === "restaurantExists"
           )
             setSignupError(response.data.message);
-          else console.log(response.data.message);
+          else navigate("/restaurant/login")
         })
         .catch((error) => {
           if (error.response) setSignupError(error.response.data.message);
@@ -185,15 +191,24 @@ export default function RestaurantSignUpPage() {
             <label for="restaurant-signup-password" className="input-label">
               Password
             </label>
+            <div className="password-input-box">
             <input
-              type="password"
+              type={hidePassword?"password":"text"}
               name="restaurant-signup-password"
               id="restaurant-signup-password"
-              className="input-field"
+              className="password-input-field"
               onChange={handlePasswordChange}
               onFocus={() => setDisplayRule(true)}
               onBlur={() => setDisplayRule(false)}
             />
+            <div className="show-hide-password-box" onClick={handleClickShowPassword}>
+                {hidePassword ? (
+                  <VisibilityOutlinedIcon style={{ fontSize: "20px", color: "#5e5e5e" }} />
+                ) : (
+                  <VisibilityOffOutlinedIcon style={{ fontSize: "20px", color: "#5e5e5e" }} />
+                )}
+              </div>
+            </div>
             <p className="error">{passwordError}</p>
             {displayRule && (
               <p className="password-rule">

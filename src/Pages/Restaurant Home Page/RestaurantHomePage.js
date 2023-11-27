@@ -62,60 +62,76 @@ export default function RestaurantHomePage() {
   return (
     <>
       <div className="food-item-main-div">
-        <table className="food-item-list">
-          <tr className="food-item-list-heading">
-            <th>Food Item</th>
-            <th>Name</th>
-            <th>Quantity</th>
-            <th>Price</th>
-            <th>View</th>
-            <th>Edit</th>
-            <th>Delete</th>
-          </tr>
-          {foodItemList.length > 0 &&
-            foodItemList.map((foodItem, index) => {
-              return (
-                <tr>
-                  <td class="food-item-list-data">
-                    <img src={foodItem.imageUrl} className="food-item-image" />
-                  </td>
-                  <td>{foodItem.name}</td>
-                  <td>{foodItem.quantity}</td>
-                  <td>₹ {foodItem.price}</td>
-                  <td>
-                    <button
-                      className="food-item-button"
-                      onClick={() => {
-                        handleView(foodItem);
-                      }}
-                    >
-                      View
-                    </button>
-                  </td>
-                  <td>
-                    <button
-                      className="food-item-button"
-                      onClick={() => {
-                        handleEdit(foodItem);
-                      }}
-                    >
-                      Edit
-                    </button>
-                  </td>
-                  <td>
-                    <button
-                      className="food-item-button"
-                      onClick={() => {
-                        handleDelete(foodItem);
-                      }}
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              );
-            })}
-        </table>
+        {foodItemList.length > 0 && (
+          <table className="food-item-list">
+            <tr className="food-item-list-heading">
+              <th>Food Item</th>
+              <th>Name</th>
+              <th>Quantity</th>
+              <th>Price</th>
+              <th>View</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+            {foodItemList.length > 0 &&
+              foodItemList.map((foodItem, index) => {
+                return (
+                  <tr className="food-item-list-row">
+                    <td className="food-item-list-data">
+                      <img
+                        src={foodItem.imageUrl}
+                        className="food-item-image"
+                      />
+                    </td>
+                    <td>{foodItem.name}</td>
+                    <td>{foodItem.quantity}</td>
+                    <td>₹ {foodItem.price}</td>
+                    <td>
+                      <button
+                        className="food-item-button"
+                        onClick={() => {
+                          handleView(foodItem);
+                        }}
+                      >
+                        View
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        className="food-item-button"
+                        onClick={() => {
+                          handleEdit(foodItem);
+                        }}
+                      >
+                        Edit
+                      </button>
+                    </td>
+                    <td>
+                      <button
+                        className="food-item-button"
+                        onClick={() => {
+                          handleDelete(foodItem);
+                        }}
+                      >
+                        Delete
+                      </button>
+                    </td>
+                  </tr>
+                );
+              })}
+          </table>
+        )}
+        {foodItemList.length == 0 && (
+          <div className="no-food-item-div">
+            <p>Your food item list is empty. Please add food items.</p>
+            <button
+              className="food-item-button"
+              onClick={() => navigate("/restaurant/addfooditem")}
+            >
+              Add food item
+            </button>
+          </div>
+        )}
         <div className={showDeleteModal ? "delete-modal" : "hide-data"}>
           <h3>Delete Food Item?</h3>
           <p>Are you sure, you want to delete this Food Item?</p>
@@ -143,7 +159,7 @@ export default function RestaurantHomePage() {
               style={{
                 marginBottom: "5px",
                 fontSize: "20px",
-                color: "#ff9100",
+                color: "#93e410",
                 cursor: "pointer",
               }}
               onClick={() => setShowViewModal(false)}
