@@ -40,7 +40,7 @@ export default function Orders() {
         })
         .then((response) => {
           console.log(response.data);
-          window.location.reload()
+          window.location.reload();
         })
         .catch((error) => {
           console.log(error.message);
@@ -51,66 +51,68 @@ export default function Orders() {
   };
   return (
     <div className="order-main-div">
-      {orders.length > 0 && (
-        <>
-        <h2>Current Orders</h2>
-        <table className="order-table">
-          <tr>
-            <th className="order-th">Serial No.</th>
-            <th className="order-th">Item Name</th>
-            <th className="order-th">Item Quantity</th>
-            <th className="order-th">Status</th>
-          </tr>
-          {orders.map((order, index) => {
-            let arr = [];
-            order.items.forEach((item) => {
-              if (item.restaurant_id === _id && item.active === true)
-                arr.push(item);
-            });
-            return (
+      <div className="order-inner-div">
+        {orders.length > 0 && (
+          <>
+            <h2>Current Orders</h2>
+            <table className="order-table">
               <tr>
-                <td  className="order-td">{sno++}</td>
-                <td rowspan={arr.length}  className="order-td">
-                  {arr.map((item) => {
-                    return (
-                      <tr>
-                        <td className="order-td">{item.item_name}</td>
-                      </tr>
-                    );
-                  })}
-                </td>
-                <td rowspan={arr.length} className="order-td">
-                  {arr.map((item) => {
-                    return (
-                      <tr>
-                        <td className="order-td">{item.quantity}</td>
-                      </tr>
-                    );
-                  })}
-                </td>
-                <td rowspan={arr.length} className="order-td">
-                  {arr.map((item) => {
-                    return (
-                      <tr>
-                        <td className="order-td">
-                          <button
-                            className="complete"
-                            onClick={() => handleComplete(item, order)}
-                          >
-                            Mark as completed
-                          </button>
-                        </td>
-                      </tr>
-                    );
-                  })}
-                </td>
+                <th className="order-th">Serial No.</th>
+                <th className="order-th">Item Name</th>
+                <th className="order-th">Item Quantity</th>
+                <th className="order-th">Status</th>
               </tr>
-            );
-          })}
-        </table>
-        </>
-      )}
-      {orders.length==0 && (<h4>There are no orders to complete.</h4>)}
+              {orders.map((order, index) => {
+                let arr = [];
+                order.items.forEach((item) => {
+                  if (item.restaurant_id === _id && item.active === true)
+                    arr.push(item);
+                });
+                return (
+                  <tr>
+                    <td className="order-td">{sno++}</td>
+                    <td rowspan={arr.length} className="order-td">
+                      {arr.map((item) => {
+                        return (
+                          <tr>
+                            <td className="order-td">{item.item_name}</td>
+                          </tr>
+                        );
+                      })}
+                    </td>
+                    <td rowspan={arr.length} className="order-td">
+                      {arr.map((item) => {
+                        return (
+                          <tr>
+                            <td className="order-td">{item.quantity}</td>
+                          </tr>
+                        );
+                      })}
+                    </td>
+                    <td rowspan={arr.length} className="order-td">
+                      {arr.map((item) => {
+                        return (
+                          <tr>
+                            <td className="order-td">
+                              <button
+                                className="complete"
+                                onClick={() => handleComplete(item, order)}
+                              >
+                                Mark as completed
+                              </button>
+                            </td>
+                          </tr>
+                        );
+                      })}
+                    </td>
+                  </tr>
+                );
+              })}
+            </table>
+          </>
+        )}
+        {orders.length == 0 && <h4>There are no orders to complete.</h4>}
+      </div>
     </div>
   );
 }
