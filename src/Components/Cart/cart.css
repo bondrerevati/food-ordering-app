@@ -1,0 +1,83 @@
+.cart-div {
+  min-height: 100vh;
+  min-width: 70vw;
+  background-image: url("../../Assets/AddItem-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 70px;
+}
+.cart-table-div {
+  margin: auto;
+  background-color: #fff;
+  width: 70%;
+  padding: 20px;
+  margin: 20px auto;
+}
+.cart-table {
+  border: 2px solid #93e410;
+    width: 800px;
+    height: 200px;
+    align-items: center;
+    background-color: #fff;
+    justify-content: center;
+}
+.cart-table-th {
+  border-bottom: 1px solid black;
+}
+.cart-item-button {
+  background-color: #93e410;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+  font-family: inherit;
+}
+.delete-modal {
+  background-color: #fff;
+  width: 28%;
+  height: auto;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+}
+.delete-confirm-btn,
+.cancel-btn,
+.edit-confirm-btn,
+.checkout-btn {
+  background-color: #93e410;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  cursor: pointer;
+  font-family: inherit;
+  margin: 5px;
+}
+.delete-modal-btns {
+  width: 50%;
+  margin: 25px auto 25px;
+}
+.delete-modal {
+  background-color: #fff;
+  width: 28%;
+  height: auto;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  position: fixed;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 0 50vmax rgba(0, 0, 0, 0.507);
+}
+.delete-modal hr {
+  border: 1px solid #eee;
+  width: 90%;
+}
+.hide-data {
+  display: none;
+}

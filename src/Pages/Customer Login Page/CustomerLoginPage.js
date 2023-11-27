@@ -2,14 +2,20 @@ import React, { useState } from "react";
 import "./../../Common Styling/loginSignup.css";
 import customerlpImg from "./../../Assets/customerlp-img.png";
 import { useNavigate } from "react-router-dom";
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
+import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined';
 import axios from "axios";
 export default function CustomerLoginPage() {
+  const [hidePassword, setHidePassword] = useState(true);
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [loginError, setLoginError] = useState("");
   const navigate = useNavigate();
+  const handleClickShowPassword=()=>{
+    setHidePassword(!hidePassword);
+  }
   const handleEmailChange = (e) => {
     const regex =
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -39,7 +45,8 @@ export default function CustomerLoginPage() {
       axios
         .post("http://localhost:8080/customer/login", { email, password })
         .then((response) => {
-          console.log(response.data.message);
+          localStorage.setItem("customerToken", response.data.token);
+          navigate("/customer/home")
         })
         .catch((error) => {
           if (error.response) setLoginError(error.response.data.message);
@@ -67,13 +74,22 @@ export default function CustomerLoginPage() {
             <label for="customer-login-password" className="input-label">
               Password
             </label>
+            <div className="password-input-box">
             <input
-              type="password"
+              type={hidePassword?"password":"text"}
               name="customer-login-password"
               id="customer-login-password"
-              className="input-field"
+              className="password-input-field"
               onChange={handlePasswordChange}
             />
+            <div className="show-hide-password-box" onClick={handleClickShowPassword}>
+                {hidePassword ? (
+                  <VisibilityOutlinedIcon style={{ fontSize: "20px", color: "#5e5e5e" }} />
+                ) : (
+                  <VisibilityOffOutlinedIcon style={{ fontSize: "20px", color: "#5e5e5e" }} />
+                )}
+              </div>
+            </div>
             <p className="error">{passwordError}</p>
             <button
               className="submit-btn customer-login-signup-btn"
