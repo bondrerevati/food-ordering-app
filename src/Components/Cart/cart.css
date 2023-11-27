@@ -81,3 +81,10 @@
 .hide-data {
   display: none;
 }
+.empty-cart-div {
+  margin: auto;
+  background-color: #fff;
+  width: 70%;
+  padding: 20px;
+  margin: 20px auto;
+}

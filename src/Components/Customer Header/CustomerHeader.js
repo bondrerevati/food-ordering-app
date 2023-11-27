@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import DeliveryDiningIcon from '@mui/icons-material/DeliveryDining';
+import DeliveryDiningIcon from "@mui/icons-material/DeliveryDining";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import axios from "axios";
 import { decodeToken } from "react-jwt";
-import "./customerHeader.css"
+import "./customerHeader.css";
 import { Search } from "@mui/icons-material";
 
 export default function CustomerHeader() {
@@ -45,22 +45,21 @@ export default function CustomerHeader() {
               sx={{ height: "40px", width: "40px", color: "#93e410" }}
             />
           </div>
-          <div className='search-div'>
-            <input type='text' className='header-search' 
-            placeholder='Search food'
-            ></input>
-            <Search className='search-icon' />
-        </div>
         </div>
         <div className="header-right-side">
           <div>
             <AccountCircleIcon
-              sx={{ height: "40px", width: "40px", color: "#93e410", cursor:"pointer" }}
-              onClick={()=>navigate("/customer/settings")}
+              sx={{
+                height: "40px",
+                width: "40px",
+                color: "#93e410",
+                cursor: "pointer",
+              }}
+              onClick={() => navigate("/customer/settings")}
             />
           </div>
           <div>
-          <p className="username">{customerDetails.name}</p>
+            <p className="username">{customerDetails.name}</p>
           </div>
           <div className="user-profile-card" onClick={handleLogout}>
             <p>Logout</p>

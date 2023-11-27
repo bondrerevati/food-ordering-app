@@ -173,7 +173,7 @@ export default function Cart() {
         </>
       )}
       {cartList.length == 0 && (
-        <div>
+        <div className="empty-cart-div">
           <p>
             Your cart is empty. Explore the menu to enjoy delicious food from
             the comfort of your home.
