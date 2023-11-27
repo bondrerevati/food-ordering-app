@@ -12,6 +12,9 @@ import RestaurantSettings from "./Pages/Restaurant Settings/RestaurantSettings";
 import CustomerProtectedLayout from "./Components/Customer Protected Layout/CustomerProtectedLayout";
 import CustomerHomePage from "./Pages/Customer Home Page/CustomerHomePage";
 import CustomerSettings from "./Pages/Customer Settings/CustomerSettings";
+import RestaurantList from "./Components/Restaurant List/RestaurantList";
+import Cart from "./Components/Cart/Cart";
+import ItemsList from "./Components/Items List/ItemsList";
 function App() {
   return (
     <div className="App">
@@ -43,14 +46,16 @@ function App() {
           </Route>
           <Route path="/customer" element={<CustomerProtectedLayout />}>
             <Route path="/customer/home" element={<CustomerHomePage />}></Route>
-            {/* <Route
-              path="/restaurant/addfooditem"
-              element={<AddFoodItem />}
-            ></Route>
             <Route
-              path="/restaurant/orders"
-              element={<Orders />}
-            ></Route> */}
+              path="/customer/restaurant"
+              element={<RestaurantList />}
+            >
+            </Route>
+            <Route
+              path="/customer/restaurant/itemslist"
+              element={<ItemsList />}
+            ></Route>
+            <Route path="/customer/cart" element={<Cart />}></Route>
             <Route
               path="/customer/settings"
               element={<CustomerSettings />}

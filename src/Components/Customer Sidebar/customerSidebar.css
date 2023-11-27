@@ -1,0 +1,30 @@
+.sidenav-content {
+    min-height: 100vh;
+    height: auto;
+    width: 20%;
+    background-color: #fff;
+    padding-top: 1rem;
+  }
+  .nav-items li {
+    list-style: none;
+    margin-top: 10px;
+  }
+  .sidebar-span {
+    background-color: #bcea72;
+    padding: 10px;
+    width: 80%;
+    cursor: pointer;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+  }
+  .active {
+    background-color: #93e410;
+    padding: 10px;
+    width: 80%;
+    cursor: pointer;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+  }
+  
