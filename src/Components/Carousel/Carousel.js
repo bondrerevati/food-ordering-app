@@ -7,7 +7,7 @@ export default function Carousel() {
   const getFoodItemList = async () => {
     try {
       axios
-        .get("http://localhost:8080/item/getitems", {
+        .get("https://food-ordering-app-backend-tdf7.onrender.com/item/getitems", {
           headers: {
             "Content-Type": "application/json",
           },
@@ -29,7 +29,7 @@ export default function Carousel() {
     try {
       axios
         .post(
-          "http://localhost:8080/cart/addtocart",
+          "https://food-ordering-app-backend-tdf7.onrender.com/cart/addtocart",
           { foodItem },
           {
             headers: {

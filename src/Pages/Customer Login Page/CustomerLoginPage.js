@@ -43,7 +43,7 @@ export default function CustomerLoginPage() {
     }
     if (emailError === "" && passwordError === "") {
       axios
-        .post("http://localhost:8080/customer/login", { email, password })
+        .post("https://food-ordering-app-backend-tdf7.onrender.com/customer/login", { email, password })
         .then((response) => {
           localStorage.setItem("customerToken", response.data.token);
           navigate("/customer/home")

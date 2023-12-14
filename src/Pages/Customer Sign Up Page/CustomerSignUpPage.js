@@ -81,7 +81,7 @@ export default function CustomerSignUpPage() {
       passwordError === ""
     ) {
       axios
-        .post("http://localhost:8080/customer/signup", {
+        .post("https://food-ordering-app-backend-tdf7.onrender.com/customer/signup", {
           name,
           email,
           mobileNumber,

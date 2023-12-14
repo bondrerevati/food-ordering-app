@@ -118,7 +118,7 @@ export default function AddEditFoodItem() {
       };
       try {
         axios
-          .put("http://localhost:8080/item/updateitem", editedData, config)
+          .put("https://food-ordering-app-backend-tdf7.onrender.com/item/updateitem", editedData, config)
           .then((response) => {
             if (
               response.status === 200 &&
@@ -176,7 +176,7 @@ export default function AddEditFoodItem() {
       };
       try {
         axios
-          .post("http://localhost:8080/item/additem", formData, config)
+          .post("https://food-ordering-app-backend-tdf7.onrender.com/item/additem", formData, config)
           .then((response) => {
             if (
               response.status === 200 &&

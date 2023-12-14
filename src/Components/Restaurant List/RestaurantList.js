@@ -9,7 +9,7 @@ export default function RestaurantList() {
   const getRestaurantsList = async () => {
     try {
       axios
-        .get("http://localhost:8080/restaurant/getrestaurants", {
+        .get("https://food-ordering-app-backend-tdf7.onrender.com/restaurant/getrestaurants", {
           headers: {
             "Content-Type": "application/json",
           },
@@ -30,7 +30,7 @@ export default function RestaurantList() {
   const handleExploreClick = async (restaurant) => {
     try {
       axios
-        .post("http://localhost:8080/item/getitemsbyrid", {
+        .post("https://food-ordering-app-backend-tdf7.onrender.com/item/getitemsbyrid", {
           restaurant,
         })
         .then((response) => {

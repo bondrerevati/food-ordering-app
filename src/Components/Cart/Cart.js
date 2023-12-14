@@ -21,7 +21,7 @@ export default function Cart() {
   const getCartList = async () => {
     try {
       axios
-        .get("http://localhost:8080/cart/getitemsbyid", {
+        .get("https://food-ordering-app-backend-tdf7.onrender.com/cart/getitemsbyid", {
           headers: {
             "Content-Type": "application/json",
             Authorization: localStorage.getItem("customerToken"),
@@ -51,7 +51,7 @@ export default function Cart() {
       try {
         axios
           .put(
-            "http://localhost:8080/cart/updateitemquantity",
+            "https://food-ordering-app-backend-tdf7.onrender.com/cart/updateitemquantity",
             { cartItemData, newQuantity },
             {
               headers: {
@@ -79,7 +79,7 @@ export default function Cart() {
   const handleDeleteFunction = async () => {
     try {
       axios
-        .delete("http://localhost:8080/cart/deleteitem", {
+        .delete("https://food-ordering-app-backend-tdf7.onrender.com/cart/deleteitem", {
           headers: {
             Authorization: localStorage.getItem("customerToken"),
           },
@@ -100,7 +100,7 @@ export default function Cart() {
     try {
       axios
         .post(
-          "http://localhost:8080/cart/checkout",
+          "https://food-ordering-app-backend-tdf7.onrender.com/cart/checkout",
           {},
           {
             headers: {

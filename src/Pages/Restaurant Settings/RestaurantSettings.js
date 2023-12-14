@@ -11,7 +11,7 @@ export default function RestaurantSettings() {
   const getRestaurantDetails = async () => {
     try {
       axios
-        .get("http://localhost:8080/restaurant/restaurant_details", {
+        .get("https://food-ordering-app-backend-tdf7.onrender.com/restaurant/restaurant_details", {
           headers: {
             Authorization: restaurantToken,
           },
@@ -114,7 +114,7 @@ export default function RestaurantSettings() {
     ) {
       axios
         .put(
-          "http://localhost:8080/restaurant/update",
+          "https://food-ordering-app-backend-tdf7.onrender.com/restaurant/update",
           {
             name,
             email,

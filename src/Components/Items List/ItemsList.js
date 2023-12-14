@@ -8,7 +8,7 @@ export default function ItemsList() {
     try {
       axios
         .post(
-          "http://localhost:8080/cart/addtocart",
+          "https://food-ordering-app-backend-tdf7.onrender.com/cart/addtocart",
           { foodItem },
           {
             headers: {

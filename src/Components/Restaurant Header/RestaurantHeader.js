@@ -11,7 +11,7 @@ export default function RestaurantHeader() {
   const getRestaurantDetails = async () => {
     try {
       axios
-        .get("http://localhost:8080/restaurant/restaurant_details", {
+        .get("https://food-ordering-app-backend-tdf7.onrender.com/restaurant/restaurant_details", {
           headers: {
             Authorization: restaurantToken,
           },

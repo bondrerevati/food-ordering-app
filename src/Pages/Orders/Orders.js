@@ -11,7 +11,7 @@ export default function Orders() {
     const restaurantToken = localStorage.getItem("restaurantToken");
     try {
       axios
-        .get("http://localhost:8080/ordereditems/getordersbyid", {
+        .get("https://food-ordering-app-backend-tdf7.onrender.com/ordereditems/getordersbyid", {
           headers: {
             "Content-Type": "application/json",
             Authorization: restaurantToken,
@@ -34,7 +34,7 @@ export default function Orders() {
   const handleComplete = (item, order) => {
     try {
       axios
-        .post("http://localhost:8080/ordereditems/update_order_status", {
+        .post("https://food-ordering-app-backend-tdf7.onrender.com/ordereditems/update_order_status", {
           item_id: item.item_id,
           order_id: order._id,
         })

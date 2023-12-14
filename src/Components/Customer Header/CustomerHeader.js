@@ -13,7 +13,7 @@ export default function CustomerHeader() {
   const getCustomerDetails = async () => {
     try {
       axios
-        .get("http://localhost:8080/customer/customer_details", {
+        .get("https://food-ordering-app-backend-tdf7.onrender.com/customer/customer_details", {
           headers: {
             Authorization: customerToken,
           },

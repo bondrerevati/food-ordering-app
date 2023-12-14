@@ -13,7 +13,7 @@ export default function RestaurantHomePage() {
   const getFoodItemList = async () => {
     try {
       axios
-        .get("http://localhost:8080/item/getitemsbyid", {
+        .get("https://food-ordering-app-backend-tdf7.onrender.com/item/getitemsbyid", {
           headers: {
             "Content-Type": "application/json",
             Authorization: restaurantToken,
@@ -47,7 +47,7 @@ export default function RestaurantHomePage() {
   const handleDeleteFunction = () => {
     try {
       axios
-        .delete("http://localhost:8080/item/deleteitem", { data: foodItemData })
+        .delete("https://food-ordering-app-backend-tdf7.onrender.com/item/deleteitem", { data: foodItemData })
         .then((response) => {
           console.log(response.data);
           window.location.reload();

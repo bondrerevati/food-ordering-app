@@ -103,7 +103,7 @@ export default function RestaurantSignUpPage() {
       passwordError === ""
     ) {
       axios
-        .post("http://localhost:8080/restaurant/signup", {
+        .post("https://food-ordering-app-backend-tdf7.onrender.com/restaurant/signup", {
           name,
           email,
           address,
